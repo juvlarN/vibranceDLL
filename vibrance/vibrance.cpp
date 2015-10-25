@@ -95,6 +95,17 @@ namespace vibranceDLL
 		return true;
 	}
 
+	bool vibrance::isCsgoStarted(HWND *hwnd)
+	{
+		HWND test = FindWindowW(0, L"Left 4 Dead 2");
+		*hwnd = test;
+		if (!hwnd)   // Process is not running
+		{
+			return false;
+		}
+		return true;
+	}
+
 	bool vibrance::isCsgoActive(HWND *hwnd)
 	{
 		HWND activeWindow = GetForegroundWindow();
